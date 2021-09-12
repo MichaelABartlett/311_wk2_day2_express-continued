@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 // this controller holds the functions / callback of how to handle the request when the come in
-const controller = require("../controllers/products");
+const productController = require("../controllers/products");
 
 /*
 /GET comments
@@ -15,12 +15,12 @@ const controller = require("../controllers/products");
 // start adding the routes,
 
 // route to fetch all the products
-router.get("/products", controller.list);
+router.get("/products", productController.list);
 
 // route to get a specific product by its id
-router.get("/products/:id", controller.show);
+router.get("/products/:id", productController.show);
 
 // route to create a new product
-router.post("/products", controller.create);
+router.post("/products", productController.create);
 
 module.exports = router;

@@ -5,7 +5,7 @@ const express = require("express");
 const router = express.Router();
 
 // this controller holds the functions / callbacks of how to handle request when they come in
-const controller = require("../controllers/vehicles");
+const vehiclesController = require("../controllers/vehicles");
 
 /*
 /GET comments
@@ -16,13 +16,13 @@ const controller = require("../controllers/vehicles");
 // start adding the routes,
 
 // route to fetch all vehicles
-router.get("/vehicles", controller.list);
+router.get("/vehicles", vehiclesController.list);
 
 // route to get a specific vehicle by its id
-router.get("/vehicles/:id", controller.show);
+router.get("/vehicles/:id", vehiclesController.show);
 
 // route to create a new vehicle
-router.post("/vehicles", controller.create);
+router.post("/vehicles", vehiclesController.create);
 
 
 module.exports = router;

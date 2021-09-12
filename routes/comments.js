@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 // this controller holds the functions /callback of how to handle the request when they come in
-const controller = require("../controllers/comments");
+const commentsController = require("../controllers/comments");
 
 
 
@@ -17,13 +17,13 @@ const controller = require("../controllers/comments");
 // start adding the routes,
 
 // route to fetch all comments
-router.get("/comments", controller.list);
+router.get("/comments", commentsController.list);
 
 // route to get a specific comment by its id
-router.get("/comments/:id", controller.show);
+router.get("/comments/:id", commentsController.show);
 
 // route to create a new comment
-router.post("/comments", controller.create);
+router.post("/comments", commentsController.create);
 
 
 

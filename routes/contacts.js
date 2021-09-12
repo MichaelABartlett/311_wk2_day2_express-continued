@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 // this controller holds the functions / callback of how to handle the request when they come in
-const controller = require("../controllers/contacts");
+const contactsController = require("../controllers/contacts");
 
 
 
@@ -17,12 +17,12 @@ const controller = require("../controllers/contacts");
 // start adding the routes,
 
 // route to fatch all comments
-router.get("/contacts", controller.list);
+router.get("/contacts", contactsController.list);
 
 // route to get a specific comment by its id
-router.get("/contacts/:id", controller.show);
+router.get("/contacts/:id", contactsController.show);
 
 // toure to create a new contact
-router.post("/contacts", controller.create)
+router.post("/contacts", contactsController.create)
 
 module.exports = router;
